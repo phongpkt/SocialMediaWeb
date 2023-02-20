@@ -1,0 +1,40 @@
+﻿@model ICollection<WebDemo.Models.Ideas>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideas</title>
+    <link rel="stylesheet" href="~/css/ideas_index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="create_blog">
+        <a id="add" class="btn btn-warning" asp-action="Create">Add new idea</a><br /><br />
+    </div>
+    @foreach (Ideas idea in Model)
+    {
+        <div class="ideas_blog">
+            <a asp-action="Detail" asp-route-id="@idea.IdeasId">
+                <h3>@idea.Title</h3>
+            </a>
+            <div class="publisher">
+                <h4>@idea.Publisher</h4>
+            </div>
+            <div class="content">
+                <p>@idea.Content</p>
+            </div>
+            <div class="published_date">
+                <p>@idea.PublishedDate</p>
+            </div>
+            <div class="like_dislike">
+                <button class="fa fa-thumbs-up"></button>
+                <button class="fa fa-thumbs-down"></button>
+            </div>
+            <a class="btn btn-warning" asp-action="Delete" asp-route-id="@idea.IdeasId" onclick="    return confirm('Are you sure you want to remove this blog?');">Delete</a> 
+        </div>
+    }
+</body>
+</html>

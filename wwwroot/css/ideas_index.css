@@ -1,0 +1,8 @@
+﻿.ideas_blog{
+    border: solid 1px black;
+    margin-top: 10px;
+}
+.like_dislike button{
+    font-size: 20px;
+    margin-left: 5%;
+}

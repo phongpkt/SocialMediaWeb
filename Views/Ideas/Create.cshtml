@@ -1,0 +1,41 @@
+﻿@model WebDemo.Models.Ideas
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new idea</title>
+</head>
+<body>
+    <div class="container col-md-8 text-center mt-3">
+        <h1 class="text text-danger">Add new Idea</h1>
+        <form class="card p-2 bg-white" action="Create" method="post">
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <input class="form-control" asp-for="Title" />
+                <span class="text-black-50 text-danger" asp-validation-for="Title"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Publisher"></label>
+                <input class="form-control" asp-for="Publisher" />
+                <span class="text-black-50 text-danger" asp-validation-for="Publisher"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublishedDate"></label>
+                <input class="form-control" asp-for="PublishedDate" />
+                <span class="text-black-50 text-danger" asp-validation-for="PublishedDate"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Content"></label>
+                <input class="form-control" asp-for="Content" />
+                <span class="text-black-50 text-danger" asp-validation-for="Content"></span>
+            </div>    
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Add" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>
